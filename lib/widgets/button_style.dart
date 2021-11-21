@@ -14,7 +14,7 @@ ButtonStyle buttonStyle() {
     ),
     backgroundColor: MaterialStateProperty.all<Color>(backgroundColor),
     padding: MaterialStateProperty.all(
-      EdgeInsets.symmetric(vertical: 15, horizontal: 35),
+      const EdgeInsets.symmetric(vertical: 15, horizontal: 35),
     ),
     elevation: MaterialStateProperty.all(4),
     shadowColor: MaterialStateProperty.all(backgroundColor),

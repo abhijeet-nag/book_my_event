@@ -1,19 +1,20 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:book_my_event/models/colors.dart';
+import 'package:book_my_event/screens/signup_email_otp.dart';
 import 'package:book_my_event/widgets/app_bar.dart';
 import 'package:book_my_event/widgets/button_style.dart';
 import 'package:book_my_event/widgets/otp_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class OtpCheck extends StatefulWidget {
-  const OtpCheck({Key? key}) : super(key: key);
+class SignupPhoneOtp extends StatefulWidget {
+  const SignupPhoneOtp({Key? key}) : super(key: key);
 
   @override
-  _OtpCheckState createState() => _OtpCheckState();
+  _SignupPhoneOtpState createState() => _SignupPhoneOtpState();
 }
 
-class _OtpCheckState extends State<OtpCheck> {
+class _SignupPhoneOtpState extends State<SignupPhoneOtp> {
   final TextEditingController controller = TextEditingController();
   OtpTextField otp = OtpTextField();
 
@@ -23,7 +24,7 @@ class _OtpCheckState extends State<OtpCheck> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: appBar("Login as a User"),
+        appBar: appBar("Signup as a User"),
         body: Padding(
           padding: const EdgeInsets.only(top: 50),
           child: Column(
@@ -32,7 +33,7 @@ class _OtpCheckState extends State<OtpCheck> {
               const Padding(
                 padding: EdgeInsets.only(left: 18, bottom: 5),
                 child: AutoSizeText(
-                  "Enter Verification Code",
+                  "Enter Phone Verification Code",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
@@ -50,7 +51,7 @@ class _OtpCheckState extends State<OtpCheck> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.snackbar("OTP", "${otp.pin}");
+                    Get.off(const SignupEmailOtp());
                   },
                   style: buttonStyle(),
                   child: const Text('SUBMIT'),
@@ -66,8 +67,8 @@ class _OtpCheckState extends State<OtpCheck> {
                       GestureDetector(
                         onTap: () {
                           Get.snackbar(
-                            "Button Works",
-                            "RESEND button Works",
+                            "OTP RESEND",
+                            "We'll Resend You OTP, Please Check Your Phone",
                             snackPosition: SnackPosition.BOTTOM,
                           );
                         },

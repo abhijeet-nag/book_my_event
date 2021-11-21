@@ -93,12 +93,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       const Text("Don't have an account? "),
                       GestureDetector(
                         onTap: () {
-                          Get.snackbar(
-                            "Button Works",
-                            "Signup button Works",
-                            snackPosition: SnackPosition.BOTTOM,
+                          Get.off(
+                            const SignUpScreen(),
                           );
-                          Get.to(SignUpScreen());
                         },
                         child: Text(
                           "SIGNUP",
