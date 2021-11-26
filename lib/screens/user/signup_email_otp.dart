@@ -1,20 +1,20 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:book_my_event/models/colors.dart';
-import 'package:book_my_event/screens/signup_email_otp.dart';
+import 'package:book_my_event/screens/user/home_screen.dart';
 import 'package:book_my_event/widgets/app_bar.dart';
 import 'package:book_my_event/widgets/button_style.dart';
 import 'package:book_my_event/widgets/otp_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignupPhoneOtp extends StatefulWidget {
-  const SignupPhoneOtp({Key? key}) : super(key: key);
+class SignupEmailOtp extends StatefulWidget {
+  const SignupEmailOtp({Key? key}) : super(key: key);
 
   @override
-  _SignupPhoneOtpState createState() => _SignupPhoneOtpState();
+  _SignupEmailOtpState createState() => _SignupEmailOtpState();
 }
 
-class _SignupPhoneOtpState extends State<SignupPhoneOtp> {
+class _SignupEmailOtpState extends State<SignupEmailOtp> {
   final TextEditingController controller = TextEditingController();
   OtpTextField otp = OtpTextField();
 
@@ -33,14 +33,14 @@ class _SignupPhoneOtpState extends State<SignupPhoneOtp> {
               const Padding(
                 padding: EdgeInsets.only(left: 18, bottom: 5),
                 child: AutoSizeText(
-                  "Enter Phone Verification Code",
+                  "Enter Email Verification Code",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 18, bottom: 28),
                 child: AutoSizeText(
-                  "We have send a code verification to your mobile number.",
+                  "We have send a code verification to your Email Address.",
                   style: TextStyle(fontSize: 15),
                 ),
               ),
@@ -51,7 +51,7 @@ class _SignupPhoneOtpState extends State<SignupPhoneOtp> {
               Center(
                 child: ElevatedButton(
                   onPressed: () {
-                    Get.off(const SignupEmailOtp());
+                    Get.offAll(const HomeScreen());
                   },
                   style: buttonStyle(),
                   child: const Text('SUBMIT'),
@@ -67,8 +67,8 @@ class _SignupPhoneOtpState extends State<SignupPhoneOtp> {
                       GestureDetector(
                         onTap: () {
                           Get.snackbar(
-                            "OTP RESEND",
-                            "We'll Resend You OTP, Please Check Your Phone",
+                            "Button Works",
+                            "RESEND button Works",
                             snackPosition: SnackPosition.BOTTOM,
                           );
                         },

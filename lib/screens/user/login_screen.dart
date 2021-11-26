@@ -1,7 +1,7 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:book_my_event/models/colors.dart';
-import 'package:book_my_event/screens/otp_check.dart';
-import 'package:book_my_event/screens/signup_screen.dart';
+import 'package:book_my_event/screens/user/otp_check.dart';
+import 'package:book_my_event/screens/user/signup_screen.dart';
 import 'package:book_my_event/widgets/app_bar.dart';
 import 'package:book_my_event/widgets/button_style.dart';
 import 'package:flutter/material.dart';

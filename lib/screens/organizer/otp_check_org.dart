@@ -6,14 +6,14 @@ import 'package:book_my_event/widgets/otp_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class SignupEmailOtp extends StatefulWidget {
-  const SignupEmailOtp({Key? key}) : super(key: key);
+class OtpCheckOrg extends StatefulWidget {
+  const OtpCheckOrg({Key? key}) : super(key: key);
 
   @override
-  _SignupEmailOtpState createState() => _SignupEmailOtpState();
+  _OtpCheckOrgState createState() => _OtpCheckOrgState();
 }
 
-class _SignupEmailOtpState extends State<SignupEmailOtp> {
+class _OtpCheckOrgState extends State<OtpCheckOrg> {
   final TextEditingController controller = TextEditingController();
   OtpTextField otp = OtpTextField();
 
@@ -23,7 +23,7 @@ class _SignupEmailOtpState extends State<SignupEmailOtp> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         backgroundColor: Colors.white,
-        appBar: appBar("Signup as a User"),
+        appBar: appBar("Login as an Organizer"),
         body: Padding(
           padding: const EdgeInsets.only(top: 50),
           child: Column(
@@ -32,14 +32,14 @@ class _SignupEmailOtpState extends State<SignupEmailOtp> {
               const Padding(
                 padding: EdgeInsets.only(left: 18, bottom: 5),
                 child: AutoSizeText(
-                  "Enter Email Verification Code",
+                  "Enter Verification Code",
                   style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 ),
               ),
               const Padding(
                 padding: EdgeInsets.only(left: 18, bottom: 28),
                 child: AutoSizeText(
-                  "We have send a code verification to your Email Address.",
+                  "We have send a code verification to your mobile number.",
                   style: TextStyle(fontSize: 15),
                 ),
               ),
@@ -49,7 +49,9 @@ class _SignupEmailOtpState extends State<SignupEmailOtp> {
               ),
               Center(
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.snackbar("OTP", "${otp.pin}");
+                  },
                   style: buttonStyle(),
                   child: const Text('SUBMIT'),
                 ),

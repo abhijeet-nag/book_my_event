@@ -1,5 +1,6 @@
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:book_my_event/screens/login_screen.dart';
+import 'package:book_my_event/screens/organizer/login_screen_org.dart';
+import 'package:book_my_event/screens/user/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -72,6 +73,9 @@ class _ChooseScreenState extends State<ChooseScreen> {
                     ),
                   ),
                   GestureDetector(
+                    onTap: () {
+                      Get.to(const LoginScreenOrg());
+                    },
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [

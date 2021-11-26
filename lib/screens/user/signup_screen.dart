@@ -1,5 +1,5 @@
 import 'package:book_my_event/models/colors.dart';
-import 'package:book_my_event/screens/signup_phone_otp.dart';
+import 'package:book_my_event/screens/user/signup_phone_otp.dart';
 import 'package:book_my_event/widgets/app_bar.dart';
 import 'package:book_my_event/widgets/button_style.dart';
 import 'package:book_my_event/widgets/text_form_field.dart';
